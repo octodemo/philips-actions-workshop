@@ -10,7 +10,7 @@ The 2-hour workshop on advanced use of GitHub Actions, will include an introduct
 
 #### Introduction (5 minutes)
 - **Welcome and Objectives**
-  - Briefly introduction of GitHub Actions.
+  - Briefly introduction of GitHub Actions (slides 1 to 5).
   - Outline the goals of the workshop.
   - Explain the agenda.
 
