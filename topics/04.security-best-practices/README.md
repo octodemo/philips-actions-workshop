@@ -62,37 +62,16 @@ The organization owners can define who can bypass these rules.
 
 <img width="955" alt="image" src="https://github.com/user-attachments/assets/204dbb10-efc3-4276-9f19-b25fa00fa255">
 
-### Setting Scopes for Self-Hosted Runners
-
-Setting scopes for self-hosted runners can help limit the access of self-hosted runners to specific repositories or organizations.
-
-Example:
-
-```yaml
-jobs:
-  self-hosted-runner:
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v2
-      - name: Self-hosted runner
-        run: echo "Using self-hosted runner with limited scope"
-```
 
 ### Runner Groups
 
-Runner groups allow you to organize and manage your self-hosted runners more effectively.
+Runner groups allow you to organize and manage your self-hosted runners more effectively. You can use runner groups to assign runners to specific repositories or organizations, set permissions for runners, and limit the workflows that can use them.
 
-Example:
+### Setting Scopes for Self-Hosted Runners and Runner Groups
 
-```yaml
-jobs:
-  runner-groups:
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v2
-      - name: Runner groups
-        run: echo "Using runner groups"
-```
+Setting scopes for self-hosted runners can help limit the access of self-hosted runners to specific repositories, organizations, and workflows.
+
+To set these permissions, you have to go to the organization's or enteprise's settings and then to the `Actions` section. There you can set the permissions for self-hosted runners and runner groups.
 
 ## Reusable Workflows vs Composite Actions
 
