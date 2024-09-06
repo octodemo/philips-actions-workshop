@@ -73,6 +73,8 @@ Setting scopes for self-hosted runners can help limit the access of self-hosted 
 
 To set these permissions, you have to go to the organization's or enteprise's settings and then to the `Actions` section. There you can set the permissions for self-hosted runners and runner groups.
 
+<img width="948" alt="image" src="https://github.com/user-attachments/assets/23d39b06-be4e-43dd-a2c2-46e812a774f0">
+
 ## Reusable Workflows vs Composite Actions
 
 Reusable workflows and composite actions are two approaches to creating reusable components in GitHub Actions.
@@ -110,3 +112,13 @@ jobs:
 ```
 
 In this example, the `composite-action` job uses a composite action defined in the `.github/actions/composite-action` directory.
+
+In summary:
+
+| Reusable workflows | Composite actions |
+| Can connect a maximum of four levels of workflows	| Can be nested to have up to 10 composite actions in one workflow |
+| Can use secrets |	Cannot use secrets |
+| Can use if: conditionals	| Cannot use if: conditionals|
+| Can be stored as normal YAML files in your project	| Requires individual folders for each composite action |
+| Can use multiple jobs	| Cannot use multiple jobs
+| Each step is logged in real-time	| Logged as one step even if it contains multiple steps |
