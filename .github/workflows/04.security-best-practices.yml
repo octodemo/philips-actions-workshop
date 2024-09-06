@@ -9,7 +9,7 @@ jobs:
   secrets-management:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use secrets
         run: echo "Using secrets"
         env:
@@ -18,13 +18,13 @@ jobs:
   security-hardening:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Security hardening
         run: echo "Security hardening for workflows"
 
   reusable-vs-composite:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Reusable workflows vs Composite actions
         run: echo "Reusable workflows vs Composite actions"
