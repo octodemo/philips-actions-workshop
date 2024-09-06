@@ -45,11 +45,5 @@ The 2-hour workshop on advanced use of GitHub Actions, will include an introduct
   
 #### **Q&A and Wrap-up (10 minutes)**
 - Open the floor for questions.
-- Recap key points.
-- Provide additional resources for learning.
-- Thank participants for attending.
-
-### **Preparation and Resources:**
-- **Pre-workshop Materials:**
-  - [ ] Provide the repos that will be used beforehand
-  - [ ] Ensure the sandbox org has access to their self-hosted runners
+- Recap key points (use slide deck).
+- Provide additional resources for learning ([GitHub Automation Pathways](https://resources.github.com/learn/pathways/automation/)).
