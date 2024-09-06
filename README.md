@@ -1,1 +1,1 @@
-# philips-actions-workshop
+# Philips Actions Workshop
