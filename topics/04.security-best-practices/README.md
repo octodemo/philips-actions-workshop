@@ -56,7 +56,11 @@ Restricting permissions to edit workflows can help prevent unauthorized changes 
 
 To restrict permissions to edit workflows you can create a [Repository Ruleset](https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets) of the type [Push ruleset](https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets#push-rulesets) and add a rule to restrict the `workflows` directory.
 
+<img width="925" alt="image" src="https://github.com/user-attachments/assets/f77ab945-d643-4154-b08a-01d89a18da02">
+
 The organization owners can define who can bypass these rules.
+
+<img width="955" alt="image" src="https://github.com/user-attachments/assets/204dbb10-efc3-4276-9f19-b25fa00fa255">
 
 ### Setting Scopes for Self-Hosted Runners
 
