@@ -115,6 +115,7 @@ In this example, the `composite-action` job uses a composite action defined in t
 In summary:
 
 | Reusable workflows | Composite actions |
+| --- | --- |
 | Can connect a maximum of four levels of workflows	| Can be nested to have up to 10 composite actions in one workflow |
 | Can use secrets |	Cannot use secrets |
 | Can use if: conditionals	| Cannot use if: conditionals|
