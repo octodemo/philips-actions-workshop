@@ -18,7 +18,7 @@ on:
       - main
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # For all examples, change the runner type for Philips' self-hosted runners labels
     steps:
       - uses: actions/checkout@v2
       - name: Set up Node.js
