@@ -1,0 +1,30 @@
+name: Security Best Practices
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  secrets-management:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use secrets
+        run: echo "Using secrets"
+        env:
+          SECRET_VALUE: ${{ secrets.SECRET_NAME }}
+
+  security-hardening:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Security hardening
+        run: echo "Security hardening for workflows"
+
+  reusable-vs-composite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Reusable workflows vs Composite actions
+        run: echo "Reusable workflows vs Composite actions"

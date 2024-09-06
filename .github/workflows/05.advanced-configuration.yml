@@ -1,0 +1,22 @@
+name: Advanced Configuration
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  environment-variables:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set environment variables
+        run: echo "MY_VAR=Hello World" >> $GITHUB_ENV
+
+  conditional-execution:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Conditional execution
+        if: github.event_name == 'push'
+        run: echo "This job runs only on push events"
