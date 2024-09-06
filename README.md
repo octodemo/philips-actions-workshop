@@ -45,5 +45,5 @@ The 2-hour workshop on advanced use of GitHub Actions, will include an introduct
   
 #### **Q&A and Wrap-up (10 minutes)**
 - Open the floor for questions.
-- Recap key points (use slide deck).
+- Recap key points (use [slide deck](slides/Actions_Workshop.pptx)).
 - Provide additional resources for learning ([GitHub Automation Pathways](https://resources.github.com/learn/pathways/automation/)).
