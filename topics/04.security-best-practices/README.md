@@ -62,7 +62,6 @@ The organization owners can define who can bypass these rules.
 
 <img width="955" alt="image" src="https://github.com/user-attachments/assets/204dbb10-efc3-4276-9f19-b25fa00fa255">
 
-
 ### Runner Groups
 
 Runner groups allow you to organize and manage your self-hosted runners more effectively. You can use runner groups to assign runners to specific repositories or organizations, set permissions for runners, and limit the workflows that can use them.
