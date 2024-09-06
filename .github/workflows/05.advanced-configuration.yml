@@ -90,4 +90,4 @@ jobs:
           name: my-variable
           path: .
       - name: Read variable from file
-        run: source my_variable.txt && echo $MY_VARIABLE
+        run: cat my_variable.txt
