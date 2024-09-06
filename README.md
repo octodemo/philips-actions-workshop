@@ -1,7 +1,5 @@
 # Philips Actions Workshop
 
-## 2. Actions workshop
-
 The 2-hour workshop on advanced use of GitHub Actions, will include an introduction to the basics but focuses on more advanced topics:
 
 ### Workshop Title: Advanced GitHub Actions Workshop
