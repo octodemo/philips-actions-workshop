@@ -112,7 +112,7 @@ jobs:
 
 In this example, the `composite-action` job uses a composite action defined in the `.github/actions/composite-action` directory.
 
-In summary:
+#### In summary:
 
 | Reusable workflows | Composite actions |
 | --- | --- |
