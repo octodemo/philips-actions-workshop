@@ -8,7 +8,7 @@ Managing secrets and variables securely is crucial for protecting sensitive info
 
 ### Using Secrets
 
-Secrets are encrypted environment variables that you can create in your repository settings. They are used to store sensitive information such as API keys, tokens, and passwords.
+Secrets are encrypted environment variables that you can create in your repository or organization settings. They are used to store sensitive information such as API keys, tokens, and passwords.
 
 Example:
 
@@ -21,14 +21,14 @@ jobs:
       - name: Use secrets
         run: echo "Using secrets"
         env:
-          SECRET_VALUE: ${{ secrets.SECRET_NAME }}
+          SECRET_VALUE: ${{ secrets.MY_SECRET }}
 ```
 
-In this example, the `SECRET_NAME` secret is accessed using the `${{ secrets.SECRET_NAME }}` syntax and assigned to the `SECRET_VALUE` environment variable.
+In this example, the `MY_SECRET` secret is accessed using the `${{ secrets.MY_SECRET }}` syntax and assigned to the `SECRET_VALUE` environment variable.
 
 ### Using Variables
 
-Variables are used to store non-sensitive information that can be reused across multiple steps in a workflow.
+Variables are used to store non-sensitive information that can be reused across multiple steps in a workflow or across multiple repos in an organization.
 
 Example:
 
@@ -37,14 +37,14 @@ jobs:
   use-variables:
     runs-on: ubuntu-latest
     env:
-      MY_VARIABLE: "Hello, World!"
+      MY_VARIABLE: ${{ vars.MY_VARIABLE }}
     steps:
       - uses: actions/checkout@v2
       - name: Use variables
         run: echo $MY_VARIABLE
 ```
 
-In this example, the `MY_VARIABLE` variable is defined in the `env` section and accessed using the `$MY_VARIABLE` syntax.
+In this example, the `MY_VARIABLE` variable is accessed using the `${{ vars.MY_VARIABLE }}` syntax and assigned to the `MY_VARIABLE` environment variable.
 
 ## Security Hardening for Workflows
 
@@ -54,17 +54,9 @@ Security hardening for workflows involves implementing best practices to protect
 
 Restricting permissions to edit workflows can help prevent unauthorized changes to your workflows.
 
-Example:
+To restrict permissions to edit workflows you can create a [Repository Ruleset](https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets) of the type [Push ruleset](https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets#push-rulesets) and add a rule to restrict the `workflows` directory.
 
-```yaml
-jobs:
-  security-hardening:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Security hardening
-        run: echo "Security hardening for workflows"
-```
+The organization owners can define who can bypass these rules.
 
 ### Setting Scopes for Self-Hosted Runners
 

@@ -1,0 +1,15 @@
+name: 'Composite Action'
+description: 'A custom composite action'
+inputs:
+  name:
+    description: 'The name to greet'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Print greeting
+      shell: bash
+      run: echo "Hello, ${{ inputs.name }}!"
+    - name: Print current date
+      shell: bash
+      run: date

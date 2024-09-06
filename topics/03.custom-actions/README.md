@@ -2,6 +2,8 @@
 
 In this section, we will cover how to create and use custom actions in GitHub Actions. We will explore JavaScript/TypeScript actions, containerized actions, composite actions, and publishing private actions for reuse.
 
+Further reading: https://docs.github.com/en/enterprise-cloud@latest/actions/sharing-automations/creating-actions/about-custom-actions#choosing-a-location-for-your-action
+
 ## Writing Custom JavaScript/TypeScript Actions
 
 Custom JavaScript/TypeScript actions allow you to write actions using JavaScript or TypeScript. These actions can be used to automate tasks in your workflows.
@@ -79,7 +81,7 @@ RUN npm install
 ENTRYPOINT ["node", "/index.js"]
 ```
 
-3. Create an `index.js` file in the action directory:
+3. Create an `index.js` file in the action directory (although we're using Node.js in this example, you can use any language or runtime that can be packaged as a Docker container):
 
 ```js
 const core = require('@actions/core');
@@ -166,59 +168,11 @@ jobs:
 
 ## Publishing Private Actions for Reuse
 
-Private actions can be published and reused within your organization. This can help you share common actions across multiple repositories.
+Private actions can be published and reused within your organization. This can help you share common actions across multiple repositories. For this use case, we recommend using a monorepo to store your Action, so other users can easily find it, read its documentation, and use it in their workflows pointing to a specific version, SHA, or branch.
 
-### Example: Publishing a Private Action
-
-1. Create a new directory for your action:
-
-```sh
-mkdir -p .github/actions/private-action
-```
-
-2. Create an `index.js` file in the action directory:
-
-```js
-const core = require('@actions/core');
-
-try {
-  const name = core.getInput('name');
-  console.log(`Hello, ${name}!`);
-} catch (error) {
-  core.setFailed(error.message);
-}
-```
-
-3. Create an `action.yml` file in the action directory:
+### Use the private action in your workflow:
 
 ```yaml
-name: 'Private Action'
-description: 'A custom private action'
-inputs:
-  name:
-    description: 'The name to greet'
-    required: true
-runs:
-  using: 'node12'
-  main: 'index.js'
-```
-
-4. Publish the action to your private repository:
-
-```sh
-git add .github/actions/private-action
-git commit -m "Add private action"
-git push origin main
-```
-
-5. Use the private action in your workflow:
-
-```yaml
-jobs:
-  publish-private-action:
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Publish private action
-        run: echo "Publishing private action"
+      - uses: <your_org>/<action_repo>@<sha/branch/version>
 ```

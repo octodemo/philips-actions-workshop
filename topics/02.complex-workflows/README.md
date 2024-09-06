@@ -35,6 +35,7 @@ Example:
 
 ```yaml
 jobs:
+  [...]
   sequential-job:
     runs-on: ubuntu-latest
     needs: [parallel-job-1, parallel-job-2]
@@ -84,3 +85,29 @@ jobs:
 ```
 
 In this example, the `reusable-workflow` job uses a reusable workflow defined in the `.github/workflows/reusable-workflow.yml` file. You can pass inputs to the reusable workflow using the `with` keyword.
+
+Reusable workflows can also be stored in a separate repository in the same organization or in another organization in the same enterprise. This can be useful if you want to share workflows across multiple repositories.
+
+Example:
+
+```yaml
+name: Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      some-input:
+        description: 'An example input'
+        required: true
+        type: string
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Print input
+        run: echo "The input value is ${{ inputs.some-input }}"
+```

@@ -1,0 +1,19 @@
+name: Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      some-input:
+        description: 'An example input'
+        required: true
+        type: string
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Print input
+        run: echo "The input value is ${{ inputs.some-input }}"
