@@ -19,7 +19,7 @@ The 2-hour workshop on advanced use of GitHub Actions, will include an introduct
   - Basic components: workflows, jobs, steps, and actions (slides 5 to 12).
 - **Creating Your First Action**
   - Demonstrate a simple CI/CD pipeline.
-  - Key concepts: `.github/workflows` directory, YAML syntax (see.
+  - Key concepts: `.github/workflows` directory, YAML syntax 
 
 #### Advanced GitHub Actions (90 minutes)
 - **Complex Workflows**
