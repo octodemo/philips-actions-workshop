@@ -176,3 +176,36 @@ Private actions can be published and reused within your organization. This can h
     steps:
       - uses: <your_org>/<action_repo>@<sha/branch/version>
 ```
+
+## Exercise: Creating and Using Custom Actions
+
+In this exercise, you will create and use different types of custom actions in GitHub Actions. Follow the high-level instructions below to complete each task.
+
+### Task 1: Custom JavaScript/TypeScript Action
+
+1. Create a new directory for your custom JavaScript/TypeScript action.
+2. Write a JavaScript file that performs a simple task using the GitHub Actions toolkit.
+3. Define the action metadata in an `action.yml` file.
+4. Use your custom action in a GitHub Actions workflow.
+
+### Task 2: Containerized Action
+
+1. Create a new directory for your containerized action.
+2. Write a `Dockerfile` to define the environment and dependencies for your action.
+3. Write a script that performs a simple task and package it in the Docker container.
+4. Define the action metadata in an `action.yml` file.
+5. Use your containerized action in a GitHub Actions workflow.
+
+### Task 3: Composite Action
+
+1. Create a new directory for your composite action.
+2. Define multiple steps in an `action.yml` file to perform a series of tasks.
+3. Use your composite action in a GitHub Actions workflow.
+
+### Task 4: Publishing Private Actions
+
+1. Create a new repository or use an existing one to store your private actions.
+2. Define the action metadata and implementation in the repository.
+3. Use your private action in a GitHub Actions workflow by referencing the repository and a specific version, SHA, or branch.
+
+Complete each task by following the high-level instructions and refer to the detailed examples provided in the previous sections for guidance.

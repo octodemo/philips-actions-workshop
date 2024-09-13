@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: 01. Basic Workflow
 
 on:
   push:

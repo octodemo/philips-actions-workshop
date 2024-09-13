@@ -310,3 +310,35 @@ jobs:
 ```
 
 In this example, the `GITHUB_TOKEN` is granted read access to the repository contents and write access to issues.
+
+## Exercise: Advanced Configuration in GitHub Actions
+
+In this exercise, you will practice advanced configuration techniques for GitHub Actions workflows. Follow the steps below to complete the exercise.
+
+### Step 1: Define Environment Variables
+1. Create a new workflow file.
+2. Define environment variables at the job level.
+3. Print the environment variables in a step.
+
+### Step 2: Use Environment Variables in Steps
+1. Define environment variables at the step level.
+2. Print the environment variables in subsequent steps.
+
+### Step 3: Implement Conditional Execution
+1. Create steps that run based on specific conditions using the `if` keyword.
+   - Example: `if: github.event_name == 'push'` (This step will only run if the event triggering the workflow is a push event).
+2. Combine multiple conditions using logical operators.
+   - Example: `if: github.event_name == 'push' && github.ref == 'refs/heads/main'` (This step will only run if the event is a push and the branch is main).
+
+### Step 4: Utilize GitHub Expressions and Variables
+1. Use expressions to compute values dynamically.
+2. Access different contexts such as `github`, `env`, `job`, `steps`, `runner`, and `secrets`.
+
+### Step 5: Pass Variables Between Jobs
+1. Use artifacts to pass variables between jobs by writing them to a file.
+2. Use job outputs to pass variables between jobs.
+
+### Step 6: Use the `GITHUB_TOKEN`
+1. Access the `GITHUB_TOKEN` in your workflow.
+2. Use the `GITHUB_TOKEN` to authenticate with the GitHub API.
+3. Customize the permissions of the `GITHUB_TOKEN`.

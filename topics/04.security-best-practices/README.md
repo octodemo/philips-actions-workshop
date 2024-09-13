@@ -87,7 +87,7 @@ Example:
 ```yaml
 jobs:
   reusable-workflow:
-    uses: ./.github/workflows/reusable-workflow.yml
+    uses: ./.github/workflows/reusable-workflow.yml@main
     with:
       some-input: some-value
 ```
@@ -103,9 +103,9 @@ jobs:
   composite-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Run composite action
-        uses: ./.github/actions/composite-action
+        uses: ./.github/actions/composite-action@main
         with:
           name: 'GitHub Actions Workshop'
 ```
@@ -122,3 +122,19 @@ In this example, the `composite-action` job uses a composite action defined in t
 | Can be stored as normal YAML files in your project	| Requires individual folders for each composite action |
 | Can use multiple jobs	| Cannot use multiple jobs
 | Each step is logged in real-time	| Logged as one step even if it contains multiple steps |
+
+## Exercise: Implementing Security Best Practices in GitHub Actions
+
+In this exercise, you will apply the security best practices discussed above to create a secure GitHub Actions workflow. Follow the steps below to complete the exercise:
+
+### Step 1: Secrets and Variables Management
+1. Create a secret in your repository settings to store sensitive information.
+2. Update your workflow to use the secret in one of the steps.
+3. Create a variable in your repository settings to store non-sensitive information.
+4. Update your workflow to use the variable in one of the steps.
+
+### Step 2: Reusable Workflows vs Composite Actions
+1. Create a reusable workflow in your repository.
+2. Update another workflow to use the reusable workflow.
+3. Create a composite action in your repository.
+4. Update a workflow to use the composite action.
